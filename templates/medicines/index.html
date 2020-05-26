@@ -1,0 +1,45 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+
+{% block content %}
+<div id="content" class="container">
+    <h2>{{ title }}</h2>
+    <hr>
+    {% if user == "admin"%}
+    <a href="/Medicines/create"> Add a Medicine </a>
+    {% endif %}
+    <table class="medicine" border="1">
+        <tr>
+            <th>Description</th>
+            <th>Package</th>
+            <th>Qte</th>
+            <th>Unit_Price</th>
+            <th>Total</th>
+            <th>Exp_Date</th>
+            <th>Manage</th>
+        </tr>
+        {% for medicine in medicines %}
+        <tr>
+            <td> {{medicine.description}}</td>
+            <td> {{medicine.package}}</td>
+            <td> {{medicine.Qte}}</td>
+            <td> {{medicine.Unit_Price}}</td>
+            <td> {{medicine.Total}}</td>
+            <td> {{medicine.Exp_date}}</td>
+            <td>
+                |
+                <a href="">Edit</a>
+                |
+                <a href="">Delete</a>
+                |
+                <a href="">Details</a>
+                |
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr>
+</div>
+{% endblock content %}

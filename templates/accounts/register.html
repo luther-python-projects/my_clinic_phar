@@ -1,0 +1,48 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+
+{% block content %}
+<div style="display: flex; ">
+     <div class="memberLogin">
+        <form id="form1" action="/Accounts/register" method="post">
+            <h4>Existing User Login</h4>
+            <hr>
+            <p>
+                <label for= "email"> Email: </label><br>
+                <input type="text" name="email" id="email" class=" form-control" required>
+            </p>
+            <p>
+                <label for= "pass"> Password: </label><br>
+                <input type="password" name="password" id="pass" class="form-control" required>
+            </p>
+            <div class="btn btn-success" style="width: 6r">
+                <button type="submit" name="submitbtn" class="btn">Login</button>
+            </div>
+                <a href="/Accounts/pwd_forget" class="Link">Forgotten password?</a>
+
+        </form>
+     </div>
+    <div class="memberRegister">
+        <form id="form3" action="/accounts/register" method="post" >
+            <h4>New to Online Clinic & Pharmacy?</h4>
+            <hr>
+            <h6> There are lots of good benefits to registering </h6>
+
+            <ul class="iconList">
+                <li>Regular email updates from the Online Clinic &Pharmacy</li>
+                <li>Manage your resources</li>
+                <li>Edit your account details</li>
+            </ul>
+
+            <div class="btn btn-success">
+                <a href="/Accounts/registration"><button type="button" class="btn btn-sm ">Register Now</button></a>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock content %}

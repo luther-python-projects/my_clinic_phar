@@ -1,0 +1,43 @@
+<div class="pageWrap">
+    <div class="contentPageWrap membersWrap">
+        <div class="memberLogin">
+            <h4>Existing User Login</h4>
+            <form class="memberSignin js_memberSignin" method="post" action="/members/login.php">
+                <div class="row">
+                    <label for="loginEmail">Email</label>
+                    <div class="inputWrap">
+                        <input type="text" name="email" id="loginEmail" value="" title="Email Address" class="text" />
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="loginPassword">Password</label>
+                    <div class="inputWrap">
+                        <input type="password" name="password" id="loginPassword" value="" title="Password" class="text" />
+                    </div>
+                </div>
+                <button type="submit" name="submitbtn" class="button">Login</button>
+                <a href="/members/forgotten_password.php" class="formLink">
+                    <i class="fa fa-angle-left"></i>Forgotten password?</a>
+                <input type="hidden" value="login" name="action" />
+                <input type="hidden" name="redirect" value="" />
+            </form>
+        </div>
+        <div class="memberRegister">
+            <h4>New to Simple Online Pharmacy?</h4>
+            <p>There are lots of great benefits to registering</p>
+            <ul class="iconList">
+                <li>Regular email updates from the Simple Online Pharmacy team</li>
+                <li>Manage your resources</li><li>Edit your account details</li>
+            </ul>
+            <a href="/members/register.php" class="button">Register Now</a>
+        </div>
+    </div>
+</div>
+<div class="custom-control custom-checkbox mb-3">
+                      <input type="checkbox"   id="discount" class="custom-control-input">
+                      <label for="discount" class="custom-control-label" > I would to be sent discount code for Products</label>
+                      <input type="checkbox" id="offer1" value="offer" class="custom-control-input">
+                      <label for="offer1" class="custom-control-label">I would like to be sent special offers on products I purchase</label><br>
+                      <input type="checkbox" id="offer2" value="Boat" class="custom-control-input">
+                      <label for="offer2" class="custom-control-label"> I would like to be send ALL special offers</label><br><br>
+                </div>
