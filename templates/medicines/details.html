@@ -1,4 +1,4 @@
-{% extends 'layout/base.html' %}
+{% extends 'layouts/base.html' %}
 
 {% block title %}{{ title }}{% endblock title %}
 
@@ -6,6 +6,22 @@
 {% block content %}
 <div id="content" class="container">
     <h2>{{ title }}</h2>
+    <hr>
+    <div>
+        <img src="/media/{{ medicine.image }}" width="30%" align="left" style="margin-right: 50px">
+        <h3>{{ post.title }}</h3>
+        <h4>{{ medicine.description }}</h4>
+        <h5>
+            Exp_date: {{ medicine.Exp_date }}
+        </h5>
+        <h5> Package: {{medicine.package}}</h5>
+        <h5> Unit price: {{medicine.Unit_Price}} Uah</h5>
+
+        <div style="clear: left"></div>
+        <div style="margin-top: 10px">
+           <a href="/Medicines">Back to add medicines</a>
+        </div>
+    </div>
     <hr>
 </div>
 {% endblock content %}

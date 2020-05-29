@@ -7,4 +7,5 @@ class Medicine(models.Model):
     Qte = models.IntegerField(null=False)
     Unit_Price = models.FloatField(null=False)
     Total = models.FloatField(null=False)
-    Exp_date = models.DateField(null=False, auto_now_add=False, auto_now=False,)
+    Exp_date = models.DateField(null=False, auto_now_add=False, auto_now=False)
+    image = models.FileField(null=True, upload_to="upload/")

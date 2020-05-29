@@ -1,4 +1,4 @@
-{% extends 'layout/base.html' %}
+{% extends 'layouts/base.html' %}
 
 {% block title %}{{ title }}{% endblock title %}
 
@@ -7,5 +7,37 @@
 <div id="content" class="container">
     <h2>{{ title }}</h2>
     <hr>
+    <form id="edit_form" method="post" action="/Medicines/edit/{{ post.id }}">
+        {% csrf_token %}
+        <div>
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    <div>
+                        {{ field }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <p style="margin-top: 30px">
+            <input id="b1" type="submit" value="Save" class="btn btn-success">
+            <input id="b2" type="reset" value="Clear" class="btn btn-success">
+        </p>
+    </form>
+    <a href="/news">Back to add Medicines</a>
+    <hr>
+</div>
+<style>
+    .form-group input {
+        width: 50%;
+        height: 30px;
+    }
+    .form-group textarea {
+        width: 50%;
+    }
+    #b1, #b2 {
+        width: 150px;
+    }
+</style>
 </div>
 {% endblock content %}

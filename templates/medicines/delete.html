@@ -1,4 +1,4 @@
-{% extends 'layout/base.html' %}
+{% extends 'layouts/base.html' %}
 
 {% block title %}{{ title }}{% endblock title %}
 
@@ -6,6 +6,17 @@
 {% block content %}
 <div id="content" class="container">
     <h2>{{ title }}</h2>
+    <hr>
+    <h4>You are going to delete the Medicine:</h4>
+    <h3>{{ medicine.description }} / {{ medicine.package}} / {{ medicine.Qte }}/ {{ medicine.Unit_Price }}/ {{ medicine.Exp_date }}</h3>
+    <h4>Confirm:</h4>
+    <form action="/Medicines/delete/{{ medicine.id }}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Delete" class="btn btn-secondary" style="width: 200px">
+    </form>
+       <div style="margin-top: 10px">
+          <a href="/Medicines">Back to add medicines</a>
+       </div>
     <hr>
 </div>
 {% endblock content %}
